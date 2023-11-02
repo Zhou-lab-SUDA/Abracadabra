@@ -1,6 +1,6 @@
 # Abracadabra
 
-***A***<small>*cinetobacter*</small> ***B****aumannii* **R**esistance **A**nalyse, **C**gMLST **A**ssignment and **D**ecoding **A**ppliaction for **B**ioinformatic **R**esearch **A**pparatus
+***A****cinetobacter* ***B****aumannii* **R**esistance **A**nalyse, **C**gMLST **A**ssignment and **D**ecoding **A**ppliaction for **B**ioinformatic **R**esearch **A**pparatus
 
 **Abracadabra**, a spell of ancient origin, is our key to unlocking the enigmatic power concealed within the genomes of *Acinetobacter baumannii*.
 
