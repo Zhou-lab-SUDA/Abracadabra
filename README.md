@@ -21,17 +21,28 @@ argparse
 fastANI
 ncbi-blast+
 diamond
+samtools
+bcftools
+minimap2
 ~~~~~~~~~~
 
 Enjoy a coffee while installing these packages using commands below:
 ~~~~~~~~~~
-pip install click numba numpy pandas biopython pyarrow fastparquet fastani
+pip install numba numpy pandas biopython pyarrow fastparquet fastani minimap2
 sudo apt install -y ncbi-blast+ diamond
 or
 conda install -c conda-forge biopython numba numpy pandas pyarrow fastparquet
-conda install -c bio-conda blast diamond
+conda install -c bio-conda blast diamond samtools bcftools minimap2
 FYI: some version of pandas might not be support DataFrame.append() any more.
 ~~~~~~~~~~
 
 # Quick Start (with examples
-##
+## First spell for species indentification
+
+## Second spell for ARGs and virulent prediction
+
+## Final spell for dcgMLST/HierCC assignment
+
+## ESL definition
+
+## ESL SNP barcode
