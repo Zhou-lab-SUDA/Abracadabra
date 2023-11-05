@@ -33,7 +33,7 @@ sudo apt install -y ncbi-blast+ diamond
 or
 conda install -c conda-forge biopython numba numpy pandas pyarrow fastparquet
 conda install -c bio-conda blast diamond samtools bcftools minimap2
-FYI: some version of pandas might not be support DataFrame.append() any more.
+FYI: some version of pandas might not support DataFrame.append() any more.
 ~~~~~~~~~~
 
 # Quick Start (with examples)
