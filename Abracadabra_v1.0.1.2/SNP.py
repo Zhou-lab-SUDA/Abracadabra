@@ -45,16 +45,17 @@ def esl_snp(query, hc):
         for line in lineage_file:
             parts = line.rstrip().replace(' ', '\t').split('\t')
             lineage = parts[0].split('.SNP')[0]
-            site, homoplasy, snp_pair = parts[2], parts[3], parts[4].split('->')
+            site, homoplasy, snp_pair = parts[2], int(parts[3]), parts[4].split('->')
+            score = 1/homoplasy
             if site in vcf_dict.keys():
                 # print(snp_pair, site)
                 if snp_pair == vcf_dict[site]:
                     # print(snp_pair, site)
                     if lineage.startswith(str(hc)):
                         if lineage in potential_lineage.keys():
-                            potential_lineage[lineage] += 1
+                            potential_lineage[lineage] += score
                         else:
-                            potential_lineage[lineage] = 1
+                            potential_lineage[lineage] = score
 
     phy = ['New lineage', 'New variant']
     if len(potential_lineage.keys()) < 1:
@@ -62,6 +63,7 @@ def esl_snp(query, hc):
     else:
         max = 0
         pl, pv = '', ''
+        # print(potential_lineage)
         for l in potential_lineage.keys():
             count = potential_lineage[l]
             if max <= count:
@@ -77,15 +79,17 @@ def esl_snp(query, hc):
                     for vari in variant_file:
                         parts = vari.rstrip().replace(' ', '\t').split('\t')
                         variant = parts[0].split('.SNP')[0]
-                        site, homoplasy, snp_pair = parts[2], parts[3], parts[4].split('->')
+                        site, homoplasy, snp_pair = parts[2], int(parts[3]), parts[4].split('->')
+                        score = 1/homoplasy
                         if site in vcf_dict:
                             if snp_pair == vcf_dict[site]:
                                 if variant.startswith(pl):
                                     if variant in potential_variant.keys():
-                                        potential_variant[variant] += 1
+                                        potential_variant[variant] += score
                                     else:
-                                        potential_variant[variant] = 1
-                if len(potential_lineage.keys()) < 1:
+                                        potential_variant[variant] = score
+                # print(potential_variant)
+                if len(potential_variant.keys()) < 1:
                     phy = [pl, 'New variant']
                 else:
                     max = 0
